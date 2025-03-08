@@ -6,8 +6,8 @@ export default function Layout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: 'black' },
-        headerTintColor: 'white',
+        // headerStyle: { backgroundColor: 'black' },
+        headerTintColor: 'black',
       }}
     >
       <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
@@ -15,10 +15,9 @@ export default function Layout() {
 
       <Stack.Screen
         name='transactions/details/[id]'
-        options={{
-          title: 'Details',
-          headerStyle: { backgroundColor: 'blue' },
-        }}
+        options={({ route }) => ({
+          title: `Transaction details ${route.params.id}`,
+        })}
       />
     </Stack>
   )

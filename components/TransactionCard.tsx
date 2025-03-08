@@ -20,20 +20,6 @@ const TransactionCard = ({ transaction }: any) => {
 
   return (
     <Link href={`/transactions/details/${id}`} asChild>
-      {/* // <Link
-    //   href={{
-    //     pathname: '/transactions/details/[id]',
-    //     params: { id: String(id) },
-    //   }}
-    //   asChild
-    // >
-    //    <Link
-    //   href={{
-    //     pathname: '/transactions/details/[id]',
-    //     params: { id: id },
-    //   }}
-    //   asChild
-    // >  */}
       <Pressable className='border border-border_gray rounded-xl overflow-hidden w-full'>
         {/* Header */}
         <View className='bg-rf-gray-100 p-4'>

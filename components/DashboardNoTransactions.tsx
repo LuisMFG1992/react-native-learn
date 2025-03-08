@@ -15,7 +15,7 @@ const DashboardNoTransactions = () => {
         </Text>
       </View>
 
-      <Link href='/transactions/type' asChild>
+      <Link href='/' asChild>
         <Pressable style={styles.button}>
           <Plus color={twColors.rf_gray_100} />
           <Text style={styles.buttonText}>Add transaction</Text>
