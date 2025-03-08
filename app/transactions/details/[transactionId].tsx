@@ -1,7 +1,7 @@
 import { View, Text, Pressable } from 'react-native'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 
-export default function DetailsScreen() {
+export default function TransactionDetails() {
   const { id } = useLocalSearchParams()
   const router = useRouter()
 

@@ -13,7 +13,7 @@ const TASKS = [
     id: 2,
     task: 'Evidence of Funds',
     address: '456 Elm St',
-    status: 'Past due',
+    status: 'Coming up',
   },
   {
     id: 3,

@@ -1,47 +1,98 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import React from 'react'
+import { Link } from 'expo-router'
+import { formatDate } from '@/utils/dateUtils'
+import { formatCurrency } from '@/utils/formatCurrency'
 
-const TransactionCard = () => {
+const TransactionCard = ({ transaction }: any) => {
+  const {
+    id,
+    address,
+    clientName,
+    category,
+    psaType,
+    amount,
+    closeDate,
+    TransactionTasks,
+  } = transaction
+
+  const stringId = String(id)
+
   return (
-    <View className='border border-border_gray rounded-xl overflow-hidden'>
-      {/* Header */}
-      <View className='bg-red-100 p-5'>
-        <View>
-          <Text className='text-rf-gray-900 text-lg'>123 Main St</Text>
-        </View>
-        <View>
-          <Text className='text-xs font-semibold text-gray-600'>
-            AISHA PATEL
-          </Text>
-        </View>
-        <View>
-          <Text className='text-xs font-semibold text-gray-600'>
-            $625,500.00
-          </Text>
-        </View>
-        {/* Tags */}
-        <View className='flex gap-1 pt-1'>
-          <View className='self-start bg-rf-gray-100 px-2 py-1 rounded-full'>
-            <Text className='text-xs font-semibold text-gray-600'>PSA</Text>
+    <Link
+      href={{
+        pathname: '/transactions/details/[transactionId]',
+        params: { transactionId: String(id) },
+      }}
+      asChild
+    >
+      <Pressable className='border border-border_gray rounded-xl overflow-hidden w-full'>
+        {/* Header */}
+        <View className='bg-rf-gray-100 p-4'>
+          <View className='flex-row gap-4'>
+            {/* Left */}
+            <View className='flex-1'>
+              <View>
+                <Text
+                  className='text-rf-gray-900 text-md font-semibold truncate'
+                  numberOfLines={1}
+                >
+                  {address}
+                </Text>
+              </View>
+              <View>
+                <Text
+                  className='text-xs font-semibold text-gray-600'
+                  numberOfLines={1}
+                >
+                  {clientName}
+                </Text>
+              </View>
+              <View>
+                <Text
+                  className='text-xs font-semibold text-gray-600'
+                  numberOfLines={1}
+                >
+                  {`${formatCurrency(amount)}`}
+                </Text>
+              </View>
+            </View>
+            {/* Right */}
+            <View className=''>
+              {/* tasks */}
+              <View>
+                <View className='flex-row justify-end'>
+                  <Text className='text-gray-600 text-xs font-semibold'>
+                    Tasks: {TransactionTasks.totalCompletedTask} /{' '}
+                    {TransactionTasks.totalTask}
+                  </Text>
+                </View>
+              </View>
+              {/* closing */}
+              <View>
+                <Text className='text-gray-600 text-xs font-semibold'>{`Closing: ${formatDate(
+                  closeDate?.toString() || '',
+                )}`}</Text>
+                {/* <Text className='text-gray-600'>28 days left</Text> */}
+              </View>
+            </View>
           </View>
-          <View className='self-start bg-rf-gray-100 px-2 py-1 rounded-full'>
-            <Text className='text-xs font-semibold text-gray-600'>
-              Condominium
-            </Text>
+          {/* Tags */}
+          <View className='flex-row gap-1 pt-1'>
+            <View className='self-start bg-rf-gray-800 px-2 py-1 rounded-full'>
+              <Text className='text-xs font-semibold text-rf-gray-100'>
+                {category}
+              </Text>
+            </View>
+            <View className='self-start bg-rf-gray-800 px-2 py-1 rounded-full'>
+              <Text className='text-xs font-semibold text-rf-gray-100'>
+                {psaType}
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-      {/* tasks */}
-      <View className='bg-rf-gray-100 px-5 py-1 border-t border-border_gray'>
-        <Text className='text-gray-600'>Tasks completed</Text>
-        <Text className='text-gray-600'>14 of 24</Text>
-      </View>
-      {/* closing */}
-      <View className='bg-rf-gray-100 px-5 py-1 border-t border-border_gray'>
-        <Text className='text-gray-600'>Closing: 11 Mar</Text>
-        <Text className='text-gray-600'>28 days left</Text>
-      </View>
-    </View>
+      </Pressable>
+    </Link>
   )
 }
 

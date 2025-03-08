@@ -14,7 +14,7 @@ export default function Layout() {
       <Stack.Screen name='actionItems' options={{ headerShown: false }} />
 
       <Stack.Screen
-        name='[id]'
+        name='/transactions/details/[transactionId]'
         options={{
           title: 'Details',
           headerStyle: { backgroundColor: 'blue' },
