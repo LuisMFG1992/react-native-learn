@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native'
 
-const Services = () => {
+const Insights = () => {
   return (
     <View>
-      <Text>services</Text>
+      <Text>Insights</Text>
     </View>
   )
 }
 
-export default Services
+export default Insights

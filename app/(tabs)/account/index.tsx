@@ -68,7 +68,11 @@ export default function AccountPage() {
   ])
 
   return (
-    <ScrollView className='flex-1 '>
+    <ScrollView
+      className='flex-1'
+      // showsVerticalScrollIndicator={false}
+      // showsHorizontalScrollIndicator={false}
+    >
       <View className='p-4'>
         {/* PERSONAL INFO */}
         <View className='w-full gap-6'>

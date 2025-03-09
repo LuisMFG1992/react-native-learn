@@ -10,7 +10,7 @@ const accountTabs = [
 
 export default function AccountLayout() {
   return (
-    <View className='flex-1  px-4 pt-4 bg-rf-gray-300'>
+    <View className='flex-1 bg-rf-gray-300'>
       <TabApp tabs={accountTabs} />
       <Slot />
     </View>

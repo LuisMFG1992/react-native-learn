@@ -109,9 +109,9 @@ const TRANSACTIONS = [
     titleNumber: 'ABC-12345',
     titleOfficer: 'Rachel Adams',
     clientName: 'John Smith',
-    category: 'PSA',
+    category: 'Listing',
     listingType: null,
-    psaType: 'Condominium',
+    psaType: 'Residential',
     clientPhone: '(555) 123-4567',
     clientEmail: 'john.smith@email.com',
     age: '2025-03-10T15:30:00.000Z',
@@ -161,7 +161,7 @@ const TRANSACTIONS = [
     clientName: 'Emily Davis',
     category: 'PSA',
     listingType: null,
-    psaType: 'Condominium',
+    psaType: 'Vacant Land',
     clientPhone: '(555) 246-8100',
     clientEmail: 'emily.davis@email.com',
     age: '2025-03-15T12:45:00.000Z',
@@ -288,7 +288,7 @@ export default function HomeScreen() {
         : <View className=' w-full flex-1 items-center gap-4'>
             {/* Add transaction button */}
             <Link href='/' asChild>
-              <Pressable className='bg-rf-gray-800 flex-row gap-4 w-full py-2 rounded-lg justify-center items-center'>
+              <Pressable className='bg-rf-gray-800 flex-row gap-4 w-full py-1 rounded-lg justify-center items-center'>
                 <Plus color={twColors.rf_gray_100} />
                 <Text className='text-rf-gray-100 text-lg'>
                   Add transaction
@@ -296,20 +296,21 @@ export default function HomeScreen() {
               </Pressable>
             </Link>
             {/* control buttons */}
-            <View className='flex flex-col gap-4'>
+            <View className=' w-full flex-col gap-4'>
               {/* Sort and filter buttons */}
+
               <View className='flex-row gap-4'>
-                <Pressable className='w-[47.5%] py-2 flex-row justify-center gap-2 items-center bg-rf-gray-100 border border-gray-300 rounded-xl'>
+                <Pressable className='flex-1 py-1 flex-row justify-center gap-2 items-center bg-rf-gray-100 border border-gray-300 rounded-xl'>
                   <ArrowUpDown color={twColors.rf_gray_600} />
                   <Text className='text-rf-gray-600 text-lg'>Sort</Text>
                 </Pressable>
-                <Pressable className='w-[47.5%] py-2 flex-row justify-center gap-2 items-center bg-rf-gray-100 border border-gray-300 rounded-xl'>
+                <Pressable className='flex-1 py-1 flex-row justify-center gap-2 items-center bg-rf-gray-100 border border-gray-300 rounded-xl'>
                   <Filter color={twColors.rf_gray_600} />
                   <Text className='text-rf-gray-600 text-lg'>Filter</Text>
                 </Pressable>
               </View>
               {/* Search bar */}
-              <View className='flex-row items-center bg-rf-gray-100 border border-gray-300 rounded-xl px-4 shadow-sm'>
+              <View className='flex-row items-center bg-rf-gray-100 border border-gray-300 rounded-xl px-4 shadow-sm h-14'>
                 <Search
                   size={20}
                   color={twColors.rf_gray_600}

@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router'
 import Feather from '@expo/vector-icons/Feather'
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons'
-import { Image, View } from 'react-native'
+import { Image, Pressable, View } from 'react-native'
 
 export default function TabsLayout() {
   return (
@@ -31,14 +31,18 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name='services'
+        name='insights'
         options={{
-          title: 'Services',
+          title: 'Insights',
           tabBarIcon: ({ color, size }) => (
             <SimpleLineIcons name='energy' size={24} color={color} />
           ),
+          tabBarButton: (props) => (
+            <Pressable {...props} disabled={true} className='opacity-50' />
+          ),
         }}
       />
+
       <Tabs.Screen
         name='account'
         options={{

@@ -91,7 +91,7 @@ export default function Settings() {
 
   return (
     <ScrollView className='flex-1 '>
-      <View className='w-full gap-6 px-2 py-4'>
+      <View className='w-full gap-6 p-4'>
         <Text className='text-xl font-semibold'>Notifications</Text>
         <Text className='text-lg text-rf-gray-600'>
           Manage your notification preferences for transaction updates,

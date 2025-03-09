@@ -15,7 +15,7 @@ export default function TabApp({ tabs }: TabAppProps) {
   const pathname = usePathname()
 
   return (
-    <View className='border-b border-gray-200 '>
+    <View className='border-b border-gray-200'>
       <View className='flex-row relative'>
         {tabs.map((tab) => {
           const isActive = pathname === tab.href
