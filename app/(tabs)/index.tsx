@@ -276,7 +276,7 @@ const TRANSACTIONS = [
 export default function HomeScreen() {
   return (
     <ScrollView>
-      <View className='relative flex-1 justify-start items-center gap-4 bg-rf-gray-300 px-4'>
+      <View className='relative flex-1 justify-start items-center gap-4 bg-rf-gray-300 px-4 pb-4'>
         <View className='absolute top-5 right-5'>
           <Link href={'/actionItems'} asChild>
             <Bell color='#2B2927' size={30} />
