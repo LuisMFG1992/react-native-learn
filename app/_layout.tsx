@@ -13,11 +13,16 @@ export default function Layout() {
       <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
       <Stack.Screen name='actionItems' options={{ headerShown: false }} />
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name='transactions/details/[id]'
         options={({ route }: { route: { params?: { id?: string } } }) => ({
           title: `Transaction details ${route.params?.id ?? ''}`,
+          headerShown: false,
         })}
+      /> */}
+      <Stack.Screen
+        name='transactions/details'
+        options={{ headerShown: false }}
       />
 
       {/* Multi-Step Form */}
