@@ -19,7 +19,7 @@ const TransactionCard = ({ transaction }: any) => {
   const stringId = String(id)
 
   return (
-    <Link href={`/transactions/details/${id}`} asChild>
+    <Link href={`/transactions/details/${id}/overview`} asChild>
       <Pressable className='border border-border_gray rounded-xl overflow-hidden w-full'>
         {/* Header */}
         <View className='bg-rf-gray-100 p-4'>
