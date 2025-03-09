@@ -15,9 +15,18 @@ export default function Layout() {
 
       <Stack.Screen
         name='transactions/details/[id]'
-        options={({ route }) => ({
-          title: `Transaction details ${route.params.id}`,
+        options={({ route }: { route: { params?: { id?: string } } }) => ({
+          title: `Transaction details ${route.params?.id ?? ''}`,
         })}
+      />
+
+      {/* Multi-Step Form */}
+      <Stack.Screen
+        name='transactions/new'
+        options={{
+          title: 'New Transaction',
+          headerBackTitle: 'Back',
+        }}
       />
     </Stack>
   )

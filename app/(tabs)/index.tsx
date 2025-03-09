@@ -287,7 +287,7 @@ export default function HomeScreen() {
           <DashboardNoTransactions />
         : <View className=' w-full flex-1 items-center gap-4'>
             {/* Add transaction button */}
-            <Link href='/' asChild>
+            <Link href='/transactions/new/type' asChild>
               <Pressable className='bg-rf-gray-800 flex-row gap-4 w-full py-1 rounded-lg justify-center items-center'>
                 <Plus color={twColors.rf_gray_100} />
                 <Text className='text-rf-gray-100 text-lg'>

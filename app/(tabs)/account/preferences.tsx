@@ -90,7 +90,7 @@ export default function Settings() {
   }
 
   return (
-    <ScrollView className='flex-1 '>
+    <ScrollView className='flex-1'>
       <View className='w-full gap-6 p-4'>
         <Text className='text-xl font-semibold'>Notifications</Text>
         <Text className='text-lg text-rf-gray-600'>
