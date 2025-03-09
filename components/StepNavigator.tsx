@@ -22,16 +22,16 @@ export default function StepNavigator({
   const prevStep = currentIndex > 0 ? steps[currentIndex - 1] : null
 
   return (
-    <View className='flex-row justify-between mt-4'>
+    <View className='flex-row justify-between'>
       {/* Botón Back */}
-      {prevStep && (
+      {prevStep ?
         <Pressable
           className='px-4 py-2 bg-gray-300 rounded'
           onPress={() => router.push(prevStep)}
         >
           <Text className='text-black'>Back</Text>
         </Pressable>
-      )}
+      : <View></View>}
 
       {/* Botón Next o Finish */}
       {nextStep ?
